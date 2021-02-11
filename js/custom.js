@@ -102,7 +102,7 @@ function runMatter() {
           strokeStyle: `#DDDDDD`,
           lineWidth: 2,
           sprite: {
-                texture: './img/pattern-nbe-03-03.png',
+                texture: './img/pattern-nbe-05.png',
                 xScale: 1,
                 yScale: 1
             }
@@ -122,7 +122,7 @@ function runMatter() {
         strokeStyle: `#E9202E`,
         lineWidth: 2,
         sprite: {
-            texture: './img/pattern-nbe-03-02.png',
+            texture: './img/pattern-nbe-09.png',
             xScale: 1,
             yScale: 1
         }
@@ -139,7 +139,7 @@ function runMatter() {
         strokeStyle: `#3257E8`,
         lineWidth: 4,
         sprite: {
-            texture: './img/pattern-nbe-03-01.png',
+            texture: './img/pattern-nbe-07.png',
             xScale: 1,
             yScale: 1
         }
