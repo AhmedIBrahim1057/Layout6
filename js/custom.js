@@ -93,7 +93,7 @@ function runMatter() {
       s,
 
       {
-        mass: s / 20,
+        mass: 1.5,
         friction: 0,
         frictionAir: 0.02,
         angle: Math.round(Math.random() * 360),
@@ -102,9 +102,9 @@ function runMatter() {
           strokeStyle: `#DDDDDD`,
           lineWidth: 2,
           sprite: {
-                texture: './dotImg2.png',
-                xScale: .3,
-                yScale: .3
+                texture: './img/pattern-nbe-02.png',
+                xScale: 1,
+                yScale: 1
             }
         }
       }
@@ -120,13 +120,18 @@ function runMatter() {
       render: {
         fillStyle: r > 0.3 ? `#FF2D6A` : `rgb(240,240,240)`,
         strokeStyle: `#E9202E`,
-        lineWidth: 2
+        lineWidth: 2,
+        sprite: {
+            texture: './img/pattern-nbe-04.png',
+            xScale: 1,
+            yScale: 1
+        }
       }
     });
     World.add(world, circle);
 
     var circle = Bodies.circle(x, y, Common.random(2, 20), {
-      mass: 6,
+      mass: 1,
       friction: 0,
       frictionAir: 0,
       render: {
@@ -134,25 +139,25 @@ function runMatter() {
         strokeStyle: `#3257E8`,
         lineWidth: 4,
         sprite: {
-            texture: './dotImg.png',
-            xScale: .05,
-            yScale: .05
+            texture: './img/pattern-nbe-03.png',
+            xScale: 1,
+            yScale: 1
         }
       }
     });
     World.add(world, circle);
 
-    var circle = Bodies.circle(x, y, Common.random(2, 30), {
-      mass: 0.2,
-      friction: 0.6,
-      frictionAir: 0.8,
-      render: {
-        fillStyle: `rgb(240,240,240)`,
-        strokeStyle: `#FFFFFF`,
-        lineWidth: 3
-      }
-    });
-    World.add(world, circle);
+    // var circle = Bodies.circle(x, y, Common.random(2, 30), {
+    //   mass: 0.2,
+    //   friction: 0.6,
+    //   frictionAir: 0.8,
+    //   render: {
+    //     fillStyle: `rgb(240,240,240)`,
+    //     strokeStyle: `#FFFFFF`,
+    //     lineWidth: 3
+    //   }
+    // });
+    // World.add(world, circle);
   }
 
   // add mouse control
