@@ -107,9 +107,9 @@ function runMatter() {
                 yScale: 1
             }
         }
-      }
+      },
     );
-
+    
     World.add(world, body);
 
     let r = Common.random(0, 1);
@@ -147,17 +147,56 @@ function runMatter() {
     });
     World.add(world, circle);
 
-    // var circle = Bodies.circle(x, y, Common.random(2, 30), {
-    //   mass: 0.2,
-    //   friction: 0.6,
-    //   frictionAir: 0.8,
-    //   render: {
-    //     fillStyle: `rgb(240,240,240)`,
-    //     strokeStyle: `#FFFFFF`,
-    //     lineWidth: 3
-    //   }
-    // });
-    // World.add(world, circle);
+    var circle = Bodies.circle(x, y, Common.random(2, 30), {
+      mass: 0.2,
+      friction: 0.6,
+      frictionAir: 0.2,
+      render: {
+        fillStyle: `rgb(240,240,240)`,
+        strokeStyle: `#FFFFFF`,
+        lineWidth: 3,
+        sprite: {
+            texture: './img/pattern-nbe-04.png',
+            xScale: 1,
+            yScale: 1
+        }
+      }
+    });
+    World.add(world, circle);
+
+    var circle = Bodies.circle(x, y, Common.random(2, 20), {
+      mass: 1,
+      friction: 0,
+      frictionAir: 0,
+      render: {
+        fillStyle: r > 0.3 ? `#f00` : `rgb(240,240,240)`,
+        strokeStyle: `#3257E8`,
+        lineWidth: 4,
+        sprite: {
+            texture: './img/pattern-nbe-06.png',
+            xScale: 1,
+            yScale: 1
+        }
+      }
+    });
+    World.add(world, circle);
+
+    var circle = Bodies.circle(x, y, Common.random(2, 8), {
+      mass: 0.1,
+      friction: 0,
+      frictionAir: 0.01,
+      render: {
+        fillStyle: r > 0.3 ? `#FF2D6A` : `rgb(240,240,240)`,
+        strokeStyle: `#E9202E`,
+        lineWidth: 2,
+        sprite: {
+            texture: './img/pattern-nbe-08.png',
+            xScale: 1,
+            yScale: 1
+        }
+      }
+    });
+    World.add(world, circle);
   }
 
   // add mouse control
