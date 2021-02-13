@@ -59,8 +59,8 @@ function runMatter() {
     Math.max(dimensions.width / 4, dimensions.height / 4) / 2,
     {
       render: {
-        fillStyle: `rgb(240,240,240)`,
-        strokeStyle: `rgb(240,240,240)`,
+        fillStyle: `rgb(240,240,240,0)`,
+        strokeStyle: `rgb(240,240,240,0)`,
         lineWidth: 0
       },
       isStatic: true,
@@ -83,18 +83,17 @@ function runMatter() {
   for (var i = 0; i < 60; i += 1) {
     let x = Common.random(0, render.options.width);
     let y = Common.random(0, render.options.height);
-    let s =
-      Common.random() > 0.6 ? Common.random(10, 80) : Common.random(4, 60);
-    let poligonNumber = Common.random(3, 6);
+    let s = Common.random() > 0.6 ? Common.random(10, 80) : Common.random(2, 30);
+
+    let poligonNumber = Common.random(1, 2);
     var body = Bodies.polygon(
       x,
       y,
       poligonNumber,
       s,
-
       {
         mass: 1.5,
-        friction: 0,
+        friction: 0.6,
         frictionAir: 0.02,
         angle: Math.round(Math.random() * 360),
         render: {
@@ -109,18 +108,17 @@ function runMatter() {
         }
       },
     );
-    
     World.add(world, body);
 
     let r = Common.random(0, 1);
-    var circle = Bodies.circle(x, y, Common.random(2, 8), {
-      mass: 0.1,
+    var circle = Bodies.circle(x, y, Common.random(1, 2), {
+      mass: 0.5,
       friction: 0,
       frictionAir: 0.01,
       render: {
         fillStyle: r > 0.3 ? `#FF2D6A` : `rgb(240,240,240)`,
         strokeStyle: `#E9202E`,
-        lineWidth: 2,
+        lineWidth: 4,
         sprite: {
             texture: './img/pattern-nbe-09.png',
             xScale: 1,
@@ -130,7 +128,7 @@ function runMatter() {
     });
     World.add(world, circle);
 
-    var circle = Bodies.circle(x, y, Common.random(2, 20), {
+    var circle = Bodies.circle(x, y, Common.random(1, 2), {
       mass: 1,
       friction: 0,
       frictionAir: 0,
@@ -147,9 +145,9 @@ function runMatter() {
     });
     World.add(world, circle);
 
-    var circle = Bodies.circle(x, y, Common.random(2, 30), {
+    var circle = Bodies.circle(x, y, Common.random(1, 2), {
       mass: 0.2,
-      friction: 0.6,
+      friction: 0.0,
       frictionAir: 0.2,
       render: {
         fillStyle: `rgb(240,240,240)`,
@@ -164,7 +162,7 @@ function runMatter() {
     });
     World.add(world, circle);
 
-    var circle = Bodies.circle(x, y, Common.random(2, 20), {
+    var circle = Bodies.circle(x, y, Common.random(1, 2), {
       mass: 1,
       friction: 0,
       frictionAir: 0,
@@ -181,14 +179,14 @@ function runMatter() {
     });
     World.add(world, circle);
 
-    var circle = Bodies.circle(x, y, Common.random(2, 8), {
-      mass: 0.1,
+    var circle = Bodies.circle(x, y, Common.random(1, 2), {
+      mass: 1,
       friction: 0,
-      frictionAir: 0.01,
+      frictionAir: 0,
       render: {
-        fillStyle: r > 0.3 ? `#FF2D6A` : `rgb(240,240,240)`,
-        strokeStyle: `#E9202E`,
-        lineWidth: 2,
+        fillStyle: r > 0.3 ? `#f00` : `rgb(240,240,240)`,
+        strokeStyle: `#3257E8`,
+        lineWidth: 4,
         sprite: {
             texture: './img/pattern-nbe-08.png',
             xScale: 1,
@@ -197,6 +195,7 @@ function runMatter() {
       }
     });
     World.add(world, circle);
+
   }
 
   // add mouse control
